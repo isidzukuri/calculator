@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Calculator
   class RatesResolver
     DEFAULT_COMMISSION_AMOUNT = 0
@@ -18,14 +20,14 @@ module Calculator
 
     def commission_percent
       commission_entity(:commission_percent) ||
-      params[:commission_percent] ||
-      DEFAULT_COMMISSION_PERCENT
+        params[:commission_percent] ||
+        DEFAULT_COMMISSION_PERCENT
     end
 
     def commission_amount
       commission_entity(:commission_amount) ||
-      params[:commission_amount] ||
-      DEFAULT_COMMISSION_AMOUNT
+        params[:commission_amount] ||
+        DEFAULT_COMMISSION_AMOUNT
     end
 
     private

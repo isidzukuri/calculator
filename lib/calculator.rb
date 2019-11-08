@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'bigdecimal/util'
 
 require 'calculator/computations/base'

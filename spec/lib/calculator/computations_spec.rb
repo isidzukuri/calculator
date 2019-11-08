@@ -4,7 +4,6 @@ require 'spec_helper'
 
 RSpec.describe Calculator::Computations do
   describe '.call!' do
-
     let!(:context) do
       {
         amount: 100.to_d,
@@ -28,6 +27,5 @@ RSpec.describe Calculator::Computations do
 
       described_class.call!(context)
     end
-
   end
 end

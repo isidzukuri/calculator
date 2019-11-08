@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Calculator
   class Processor
     attr_reader :params
 
     def initialize(params)
-      raise ArgumentError, "missing parameter :amount" unless params[:amount]
+      raise ArgumentError, 'missing parameter :amount' unless params[:amount]
 
       @params = params
     end
@@ -27,6 +29,5 @@ module Calculator
     def rates
       @rates ||= RatesResolver.new(params).call
     end
-
   end
 end

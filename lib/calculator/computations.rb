@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 module Calculator
   module Computations
-
     CHAIN = [
       CommissionTotal,
       NetAmount
-    ]
+    ].freeze
 
     def self.call!(context)
       CHAIN.each do |computation|
@@ -13,6 +14,5 @@ module Calculator
 
       context
     end
-
   end
 end

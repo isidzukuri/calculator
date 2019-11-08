@@ -4,7 +4,6 @@ require 'spec_helper'
 
 RSpec.describe Calculator::Computations::NetAmount do
   describe '.call!' do
-
     let!(:context) do
       {
         amount: 100.to_d,
