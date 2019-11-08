@@ -37,6 +37,9 @@ Input:
 Example:
 
 ```ruby
+Calculator.call(amount: 100)
+ # => [100.0, 0.0]
+
 Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 20)
  # => [79.0, 21.0]
 ```
@@ -45,6 +48,17 @@ If commission rates not given it fallback to default values.
 
 It computes commission with precision 2 digits after floating point.
 
+Example with commission_entity:
+```ruby
+class Product
+  def commission_amount
+    0.2
+  end
+end
+
+Calculator.call(amount: 100, commission_entity: Product.new)
+# => [99.8, 0.2]
+```
 
 ## How it works
 To simplify reading and understanding of complex calculation is useful to split it in small parts. Each is responsible for one operation. It is easier to test, modify, reuse and document.
