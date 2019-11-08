@@ -8,6 +8,15 @@ module Calculator
       @params = params
     end
 
+    private
+
+    def context
+      @context ||= { amount: amount, rates: rates }
+    end
+
+    def amount
+      params[:amount].to_d.round(2)
+    end
 
   end
 end
