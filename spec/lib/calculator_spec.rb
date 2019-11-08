@@ -11,7 +11,7 @@ RSpec.describe Calculator do
     let!(:commission_percent) {20}
 
     it "computes commissions" do
-      result = Calculator.call(
+      result = described_class.call(
         amount: amount,
         commission_amount: commission_amount,
         commission_percent: commission_percent)
