@@ -2,16 +2,15 @@
 
 <img src="https://travis-ci.com/isidzukuri/calculator.svg?branch=master" alt="Build Status" />
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/calculator`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Computes commission by amount and rates. Gem converts input values to `BigDecimal` for precise calculation.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'calculator'
+gem 'calculator', source: 'https://github.com/isidzukuri/calculator'
 ```
 
 And then execute:
@@ -24,7 +23,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Input:
+ - amount *required
+ - commission_amount *optional
+ - commission_percent *optinal
+ - commission_entity(user, product) *optional
+
+
+ Output:
+
+  [netto_amount, commission_amount]
+
+Example:
+
+```ruby
+Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 20)
+ # => [79.0, 21.0]
+```
+
+If commission rates not given it fallback to default values.
+
+It computes commission with precision 2 digits after floating point.
+
 
 ## Development
 
@@ -34,4 +54,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/calculator.
+Bug reports and pull requests are welcome on GitHub at https://github.com/isidzukuri/calculator.
