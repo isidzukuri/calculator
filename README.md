@@ -44,7 +44,7 @@ Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 20)
  # => [79.0, 21.0]
 ```
 
-If commission rates not given it fallback to default values.
+If commission rates are not given it fallback to default values.
 
 It computes commission with precision 2 digits after floating point.
 
