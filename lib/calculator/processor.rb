@@ -8,6 +8,11 @@ module Calculator
       @params = params
     end
 
+    def call
+
+      [context[:net_amount], context[:commission_total]]
+    end
+
     private
 
     def context
@@ -16,6 +21,10 @@ module Calculator
 
     def amount
       params[:amount].to_d.round(2)
+    end
+
+    def rates
+      @rates ||= RatesResolver.call(params)
     end
 
   end
