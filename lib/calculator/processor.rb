@@ -13,7 +13,7 @@ module Calculator
     def call
       Computations.call!(context)
 
-      [context[:net_amount], context[:commission_total]]
+      [context[:net_amount].to_f, context[:commission_total].to_f]
     end
 
     private
