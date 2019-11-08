@@ -40,8 +40,8 @@ Example:
 Calculator.call(amount: 100)
  # => [100.0, 0.0]
 
-Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 20)
- # => [79.0, 21.0]
+Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 20.333)
+ # => [78.67, 21.33] 
 ```
 
 If commission rates are not given it fallback to default values.
