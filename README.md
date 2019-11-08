@@ -26,7 +26,7 @@ Or install it yourself as:
 Input:
  - amount *required
  - commission_amount *optional
- - commission_percent *optinal
+ - commission_percent *optional
  - commission_entity(user, product) *optional
 
 
@@ -45,6 +45,16 @@ If commission rates not given it fallback to default values.
 
 It computes commission with precision 2 digits after floating point.
 
+
+## How it works
+To simplify reading and understanding of complex calculation is useful to split it in small parts. Each is responsible for one operation. It is easier to test, modify, reuse and document.
+
+Gem uses chain of computations(`Calculator::Computations::CHAIN`). It calls each computation in specified order.
+Each updates given context. In this way results of previous computations are accessible for all which follows.
+
+Its easy to plug in new computations. For example: other commission, discounts, delivery price, fees, vats, bonuses, and so on and so forth...
+
+To add new computation you need to write computation class with implemented `:call!` method and add it to `Calculator::Computations::CHAIN`.    
 
 ## Development
 
