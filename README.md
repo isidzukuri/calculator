@@ -41,7 +41,7 @@ Calculator.call(amount: 100)
  # => [100.0, 0.0]
 
 Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 20.333)
- # => [78.67, 21.33] 
+ # => [78.67, 21.33]
 ```
 
 If commission rates are not given it fallback to default values.
@@ -72,10 +72,10 @@ Calculator.call(
 
 
 ## How it works
-To simplify reading and understanding of complex calculation is useful to split it in small parts. Each is responsible for one operation. It is easier to test, modify, reuse and document.
+To simplify reading and understanding of complex calculation is useful to split it in small parts. Each is responsible for one operation, which is easier to test, modify, reuse and document.
 
 Gem uses chain of computations(`Calculator::Computations::CHAIN`). It calls each computation in specified order.
-Each updates given context. In this way results of previous computations are accessible for all which follows.
+Each updates context of calculator. In this way results of previous computations are accessible for all following operations.
 
 Its easy to plug in new computations. For example: other commission, discounts, delivery price, fees, vats, bonuses, and so on and so forth...
 
