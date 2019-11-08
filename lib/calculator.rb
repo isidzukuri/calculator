@@ -2,6 +2,8 @@
 require 'bigdecimal/util'
 
 require 'calculator/version'
+require 'calculator/processor'
+
 
 module Calculator
   def self.call(params)
