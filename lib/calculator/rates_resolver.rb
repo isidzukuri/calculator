@@ -17,15 +17,23 @@ module Calculator
     end
 
     def commission_percent
-      params[:commission_entity]&.commission_percent ||
+      commission_entity(:commission_percent) ||
       params[:commission_percent] ||
       DEFAULT_COMMISSION_PERCENT
     end
 
     def commission_amount
-      params[:commission_entity]&.commission_amount ||
+      commission_entity(:commission_amount) ||
       params[:commission_amount] ||
       DEFAULT_COMMISSION_AMOUNT
+    end
+
+    private
+
+    def commission_entity(attr)
+      return unless params[:commission_entity].respond_to?(attr)
+
+      params[:commission_entity].public_send(attr)
     end
   end
 end

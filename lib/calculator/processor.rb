@@ -24,7 +24,7 @@ module Calculator
     end
 
     def rates
-      @rates ||= RatesResolver.call(params)
+      @rates ||= RatesResolver.new(params).call
     end
 
   end
