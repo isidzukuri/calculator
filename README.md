@@ -62,7 +62,11 @@ Calculator.call(amount: 100, commission_entity: Product.new)
 
 If rates and commission_entity are given than values from commission_entity will be used:
 ```ruby
-Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 5, commission_entity: Product.new)
+Calculator.call(
+  amount: 100,
+  commission_amount: 1.0,
+  commission_percent: 5,
+  commission_entity: Product.new)
 # => [94.8, 5.2]
 ```
 
