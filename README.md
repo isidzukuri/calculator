@@ -60,6 +60,13 @@ Calculator.call(amount: 100, commission_entity: Product.new)
 # => [99.8, 0.2]
 ```
 
+If rates and commission_entity are given than values from commission_entity will be used:
+```ruby
+Calculator.call(amount: 100, commission_amount: 1.0, commission_percent: 5, commission_entity: Product.new)
+# => [94.8, 5.2]
+```
+
+
 ## How it works
 To simplify reading and understanding of complex calculation is useful to split it in small parts. Each is responsible for one operation. It is easier to test, modify, reuse and document.
 
