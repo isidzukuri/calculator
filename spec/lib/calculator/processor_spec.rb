@@ -3,12 +3,6 @@
 require 'spec_helper'
 
 RSpec.describe Calculator::Processor do
-  describe '.new' do
-    it 'has required parameter :amount' do
-      expect { described_class.new({}) }.to raise_error(ArgumentError, 'missing parameter :amount')
-    end
-  end
-
   describe '.call' do
     let!(:amount) { 100 }
     let!(:commission_amount) { 1.0 }

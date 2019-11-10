@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 require 'bigdecimal/util'
+require 'ostruct'
 
 require 'calculator/computations/base'
 require 'calculator/computations/commission_total'
 require 'calculator/computations/net_amount'
 require 'calculator/computations'
+require 'calculator/context'
 require 'calculator/processor'
 require 'calculator/rates_resolver'
 require 'calculator/version'
